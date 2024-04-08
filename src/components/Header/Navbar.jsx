@@ -23,7 +23,7 @@ const allLink = (
       FAQ
     </NavLink>
     <NavLink
-      to='/'
+      to='/contact'
       className={({ isActive }) =>
         isActive
           ? "text-lg mr-4 text-[#23BE0A] font-semibold  rounded-lg border border-[#23BE0A] px-5 py-3"
@@ -62,7 +62,7 @@ const Navbar = () => {
         </div>
         <button>
           <NavLink to='/' className='text-3xl font-bold text-[#131313] '>
-            Book Store
+            NS Property
           </NavLink>
         </button>
       </div>
