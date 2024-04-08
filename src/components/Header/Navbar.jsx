@@ -14,7 +14,7 @@ const allLink = (
 
   
     <NavLink
-      to='/'
+      to='/faq'
       className={({ isActive }) =>
         isActive
           ? "text-lg mr-4 text-[#23BE0A] font-semibold  rounded-lg border border-[#23BE0A] px-5 py-3"
