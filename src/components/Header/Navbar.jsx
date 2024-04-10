@@ -70,12 +70,12 @@ const Navbar = () => {
         <ul className='menu menu-horizontal px-1'>{allLink}</ul>
       </div>
       <div className='navbar-end'>
-        <a className='btn bg-[#23BE0A] rounded-lg text-white font-semibold py-4 px-6 mr-4'>
-          Sign In
-        </a>
-        <a className='btn bg-[#59C6D2] rounded-lg text-white font-semibold py-4 px-6 mr-0'>
+        <NavLink to='/register' className='btn bg-[#59C6D2] rounded-lg text-white font-semibold py-4 px-6 mr-4'>
           Sign Up
-        </a>
+        </NavLink>
+        <NavLink to="/login" className='btn bg-[#23BE0A] rounded-lg text-white font-semibold py-4 px-6 mr-0'>
+          Log In
+        </NavLink>
       </div>
     </div>
   );

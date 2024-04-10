@@ -7,7 +7,7 @@ const AllCards = () => {
     <div>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8'>
         {cards.map((card) => (
-          <SingleCard key={card.bookId} card={card}></SingleCard>
+          <SingleCard key={card.id} card={card}></SingleCard>
         ))}
       </div>
     </div>

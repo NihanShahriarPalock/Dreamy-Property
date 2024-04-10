@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../firebase/FirebaseProvider";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -17,6 +18,9 @@ const Register = () => {
   }
     return (
       <div>
+        <Helmet>
+          <title>NS | Register</title>
+        </Helmet>
         <div className='w-full max-w-md mx-auto p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800'>
           <h1 className='text-2xl font-bold text-center'>Register</h1>
           <form

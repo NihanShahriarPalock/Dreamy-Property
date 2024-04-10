@@ -1,11 +1,15 @@
 
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Header/Navbar';
 
 const Error = () => {
     return (
       <div>
+        <Helmet>
+          <title>NS | Error</title>
+        </Helmet>
         <div>
-         <Navbar></Navbar>
+          <Navbar></Navbar>
 
           <section className='flex items-center h-full p-16 bg-gray-50 text-gray-800'>
             <div className='container flex flex-col items-center justify-center px-5 mx-auto my-8'>

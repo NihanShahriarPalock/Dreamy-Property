@@ -16,12 +16,12 @@ const SingleCard = ({ card }) => {
   } = card;
   return (
     <div>
-      <div className='flex flex-col  p-6 border-2  border-[#13131326] space-y-6 overflow-hidden shadow-md bg-white rounded-2xl   '>
+      <div className='flex flex-col p-6 border-2  border-[#13131326] space-y-6 overflow-hidden shadow-md bg-white rounded-2xl   '>
         <div className='mb-6'>
           <img
-            // src={image}
+            src={image}
             alt=''
-            className='w-full  max-h-[435px]  p-10 rounded-2xl bg-[#13131326]'
+            className='w-full  max-h-[435px]   rounded-2xl bg-[#13131326]'
           />
         </div>
         {/* <div className='bg-white flex gap-3'>
