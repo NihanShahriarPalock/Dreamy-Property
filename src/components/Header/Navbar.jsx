@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../hook/useAuth";
 
 const allLink = (
   <>
@@ -35,6 +36,7 @@ const allLink = (
 );
 
 const Navbar = () => {
+  const {logout,user}=useAuth();
   return (
     <div className='navbar bg-white '>
       <div className='navbar-start'>
@@ -70,12 +72,44 @@ const Navbar = () => {
         <ul className='menu menu-horizontal px-1'>{allLink}</ul>
       </div>
       <div className='navbar-end'>
-        <NavLink to='/register' className='btn bg-[#59C6D2] rounded-lg text-white font-semibold py-4 px-6 mr-4'>
+        {/* <NavLink to='/register' className='btn bg-[#59C6D2] rounded-lg text-white font-semibold py-4 px-6 mr-4'>
           Sign Up
         </NavLink>
         <NavLink to="/login" className='btn bg-[#23BE0A] rounded-lg text-white font-semibold py-4 px-6 mr-0'>
           Log In
-        </NavLink>
+        </NavLink> */}
+        {user ? (
+          <div className='dropdown dropdown-end'>
+            <label tabIndex={0} className='btn btn-ghost btn-circle avatar'>
+              <div className='w-10 rounded-full'>
+                <img
+                  src={
+                    user?.photoURL ||
+                    "https://i.ibb.co/y0yrnYQ/1681283571946.jpg"
+                  }
+                />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'>
+              <li>
+                <button className='btn btn-sm  btn-ghost'>
+                  {user?.displayName || "user name not found"}
+                </button>
+              </li>
+              <li>
+                <button onClick={logout} className='btn btn-sm  btn-ghost'>
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link to='/login'>
+            <button className='btn btn-sm  btn-ghost'>Login</button>
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
-import { useContext } from "react";
-import { AuthContext } from "../firebase/FirebaseProvider";
+
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import useAuth from "../hook/useAuth";
 
 
 const Register = () => {
-   const {createUser}=useContext(AuthContext);
+   const {createUser}=useAuth();
 
    const { register,  handleSubmit,  formState: { errors } } = useForm();
   const onSubmit = (data) => {
