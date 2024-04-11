@@ -84,21 +84,21 @@ const Navbar = () => {
               <div className='w-10 rounded-full'>
                 <img
                   src={
-                    user?.photoURL ||
-                    "https://i.ibb.co/y0yrnYQ/1681283571946.jpg"
+                    user?.photoURL || "https://i.ibb.co/9cZ7vD2/user-icon.jpg"
                   }
                 />
               </div>
             </label>
             <ul
               tabIndex={0}
-              className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'>
+              className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-auto lg:w-52'>
               <li>
                 <button className='btn btn-sm  btn-ghost'>
-                  {user?.displayName || "user name not found"}
+                  {user?.displayName || "User Name not Available"}
                 </button>
               </li>
               <li>
+                {/* <Link to={}></Link> */}
                 <button onClick={logout} className='btn btn-sm  btn-ghost'>
                   Logout
                 </button>
@@ -107,7 +107,9 @@ const Navbar = () => {
           </div>
         ) : (
           <Link to='/login'>
-            <button className='btn btn-sm  btn-ghost'>Login</button>
+            <button className='btn bg-[#23BE0A] rounded-lg text-white font-semibold py-4 px-6 mr-0'>
+              Login
+            </button>
           </Link>
         )}
       </div>

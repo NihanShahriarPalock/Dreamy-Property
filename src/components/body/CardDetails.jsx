@@ -1,13 +1,16 @@
 import { useLoaderData, useParams } from "react-router-dom";
-
+import { Helmet } from "react-helmet-async";
 const CardDetails = () => {
   const cards = useLoaderData();
   const { id } = useParams();
   const IdInt = parseInt(id);
   const card = cards.find((card) => card.id == IdInt);
-    // ok
+    
   return (
     <div>
+      <Helmet>
+        <title>NS | Product - {id}</title>
+      </Helmet>
       <div className='flex flex-col lg:flex-row gap-3 lg:gap-12'>
         <div className='w-full lg:w-1/2 bg-[#23BE0A0D] rounded-2xl items-center p-2 flex   justify-center'>
           <img className='w-full ' src={card.image} alt='' />

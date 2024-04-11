@@ -5,12 +5,13 @@ import CardDetails from "../components/body/CardDetails";
 import Login from "../pages/Login";
 import Error from "../pages/Error";
 import Register from "../pages/Register";
+import PrivateRoutes from "./PrivateRoutes";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement:<Error></Error>,
+    errorElement: <Error></Error>,
 
     children: [
       {
@@ -20,18 +21,20 @@ export const router = createBrowserRouter([
       },
       {
         path: "/:id",
-        element: <CardDetails></CardDetails>,
+        element: (
+          <PrivateRoutes>
+            <CardDetails></CardDetails>
+          </PrivateRoutes>
+        ),
         loader: () => fetch("../data.json"),
       },
       {
-        path:"/login",
-        element:<Login></Login>
-
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path:"/register",
-        element:<Register></Register>
-
+        path: "/register",
+        element: <Register></Register>,
       },
     ],
   },

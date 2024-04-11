@@ -1,11 +1,27 @@
-
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import SocialLogin from "../components/body/SocialLogin";
 import useAuth from "../hook/useAuth";
+import { useNavigate, useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useState } from "react";
 
 const Login = () => {
-  const { signInUser } = useAuth()
+  const { signInUser } = useAuth();
+  const [showPassword, setShowPassword] = useState(false);
+  // for toaster
+  const loginSuccess = (message) => {
+    toast.success(message);
+  };
+  const loginError = (errorMessage) => {
+    toast.error(errorMessage);
+  };
+
+  // for navigation
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
 
   const {
     register,
@@ -18,10 +34,13 @@ const Login = () => {
 
     signInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        if (result.user) {
+          loginSuccess("Login Successful");
+          navigate(from);
+        }
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        loginError("Login Failed!");
       });
   };
 
@@ -124,11 +143,16 @@ const Login = () => {
             <div className='relative'>
               <input
                 name='password'
-                type='password'
+                type={showPassword ? "text" : "password"}
                 placeholder='Enter Your Password'
                 className='p-3 block w-full pl-10 drop-shadow-lg outline-none'
                 {...register("password", { required: true })}
               />
+              <span
+                className='cursor-pointer absolute '
+                onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+              </span>
               {errors.password && (
                 <span className='text-red-500'>This field is required</span>
               )}
