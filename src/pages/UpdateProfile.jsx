@@ -24,11 +24,9 @@ const UpdateProfile = () => {
     try {
       updateUserProfile(displayName, image);
       setUpdateData(false);
-    //   setError(null);
       toast.success("Profile updated successfully!");
     } catch (error) {
       setUpdateData(false);
-   
       toast.error("Something went wrong");
     }
   };

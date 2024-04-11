@@ -81,29 +81,29 @@ const Navbar = () => {
         <ul className='menu menu-horizontal px-1'>{allLink}</ul>
       </div>
       <div className='navbar-end'>
-        {/* <NavLink to='/register' className='btn bg-[#59C6D2] rounded-lg text-white font-semibold py-4 px-6 mr-4'>
-          Sign Up
-        </NavLink>
-        <NavLink to="/login" className='btn bg-[#23BE0A] rounded-lg text-white font-semibold py-4 px-6 mr-0'>
-          Log In
-        </NavLink> */}
         {user ? (
-          <div className='dropdown dropdown-end'>
-            <label tabIndex={0} className='btn btn-ghost btn-circle avatar'>
-              <div className='w-10 rounded-full'>
+          <div className='dropdown dropdown-end flex'>
+            <label tabIndex={0} className='btn btn-circle avatar'>
+              <div
+                className='w-10 rounded-full tooltip'
+                data-tip={user?.displayName || "User Name not Available"}>
                 <img
                   src={
                     user?.photoURL || "https://i.ibb.co/9cZ7vD2/user-icon.jpg"
                   }
+                  alt='Profile'
+                  className='w-full h-full object-cover rounded-full'
                 />
               </div>
             </label>
             <div>
-              <button onClick={logout} className='btn btn-sm  btn-ghost'>
+              <button
+                onClick={logout}
+                className='btn bg-red-500  rounded-lg text-white font-semibold py-4 px-6 mr-0'>
                 Logout
               </button>
             </div>
-            <ul
+            {/* <ul
               tabIndex={0}
               className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-auto lg:w-52'>
               <li>
@@ -111,8 +111,8 @@ const Navbar = () => {
                   {user?.displayName || "User Name not Available"}
                 </button>
               </li>
-              <li>{/* <Link to={}></Link> */}</li>
-            </ul>
+              <li></li>
+            </ul> */}
           </div>
         ) : (
           <Link to='/login'>
