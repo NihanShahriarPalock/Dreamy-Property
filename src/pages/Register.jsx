@@ -17,12 +17,12 @@ const Register = () => {
   } = useForm();
 
   const [showPassword, setShowPassword] = useState(false);
-  const notifySuccess = (message) => {
-    toast.success(message);
-  };
-  const notifyError = (errorMessage) => {
-    toast.error(errorMessage);
-  };
+  // const notifySuccess = (message) => {
+  //   toast.success(message);
+  // };
+  // const notifyError = (errorMessage) => {
+  //   toast.error(errorMessage);
+  // };
 
   // for navigation
   const navigate = useNavigate();
@@ -35,11 +35,11 @@ const Register = () => {
     createUser(email, password).then(() => {
       updateUserProfile(fullName, image)
         .then(() => {
-          notifySuccess("Registration Successful");
+          toast.success("Registration Successful");
           navigate("/");
         })
         .catch(() => {
-          notifyError("Registration Failed!");
+          toast.error("Registration Failed!");
         });
     });
   };

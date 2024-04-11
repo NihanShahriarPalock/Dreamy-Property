@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "./FirebaseConfig";
+import PropTypes from "prop-types";
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
@@ -54,7 +55,6 @@ const FirebaseProvider = ({ children }) => {
   //Logout
   const logout = () => {
     setUser(null);
-    
     signOut(auth);
   };
 
@@ -85,3 +85,6 @@ const FirebaseProvider = ({ children }) => {
 };
 
 export default FirebaseProvider;
+FirebaseProvider.propTypes = {
+  children: PropTypes.node,
+};

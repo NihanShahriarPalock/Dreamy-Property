@@ -13,7 +13,16 @@ const allLink = (
       Home
     </NavLink>
 
-  
+    <NavLink
+      to='/updateProfile'
+      className={({ isActive }) =>
+        isActive
+          ? "text-lg mr-4 text-[#23BE0A] font-semibold  rounded-lg border border-[#23BE0A] px-5 py-3"
+          : "text-[#131313CC] text-lg mr-4 rounded-lg font-normal px-5 py-3"
+      }>
+      Update Profile
+    </NavLink>
+
     <NavLink
       to='/faq'
       className={({ isActive }) =>
@@ -89,6 +98,11 @@ const Navbar = () => {
                 />
               </div>
             </label>
+            <div>
+              <button onClick={logout} className='btn btn-sm  btn-ghost'>
+                Logout
+              </button>
+            </div>
             <ul
               tabIndex={0}
               className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-auto lg:w-52'>
@@ -97,12 +111,7 @@ const Navbar = () => {
                   {user?.displayName || "User Name not Available"}
                 </button>
               </li>
-              <li>
-                {/* <Link to={}></Link> */}
-                <button onClick={logout} className='btn btn-sm  btn-ghost'>
-                  Logout
-                </button>
-              </li>
+              <li>{/* <Link to={}></Link> */}</li>
             </ul>
           </div>
         ) : (

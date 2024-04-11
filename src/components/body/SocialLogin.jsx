@@ -6,13 +6,7 @@ import { toast } from "react-toastify";
 const SocialLogin = () => {
   const { googleLogin, githubLogin } = useAuth();
 
-    const loginSuccess = (message) => {
-      toast.success(message);
-    };
-    const loginError = (errorMessage) => {
-      toast.error(errorMessage);
-    };
-
+  
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state || "/";
@@ -20,13 +14,13 @@ const SocialLogin = () => {
   const handleSocialLogin = (socialProvider) => {
     socialProvider()
       .then((result) => {
-        loginSuccess("Login Successful");
+        toast.success("Login Successful");
         if (result.user) {
           navigate(from);
         }
       })
       .catch(() => {
-        loginError("Login Failed!");
+        toast.error("Login Failed!");
       });
   };
 

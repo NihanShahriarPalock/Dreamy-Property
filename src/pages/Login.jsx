@@ -10,13 +10,7 @@ import { useState } from "react";
 const Login = () => {
   const { signInUser } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
-  // for toaster
-  const loginSuccess = (message) => {
-    toast.success(message);
-  };
-  const loginError = (errorMessage) => {
-    toast.error(errorMessage);
-  };
+ 
 
   // for navigation
   const navigate = useNavigate();
@@ -35,12 +29,12 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         if (result.user) {
-          loginSuccess("Login Successful");
+          toast.success("Login Successful");
           navigate(from);
         }
       })
       .catch(() => {
-        loginError("Login Failed!");
+        toast.error("Login Failed!");
       });
   };
 
