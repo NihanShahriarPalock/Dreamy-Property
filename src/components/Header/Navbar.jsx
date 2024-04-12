@@ -1,6 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hook/useAuth";
-
+import { MdLogout } from "react-icons/md";
+import { VscAccount } from "react-icons/vsc";
+import { FaBarsStaggered } from "react-icons/fa6";
 const allLink = (
   <>
     <NavLink
@@ -42,20 +44,10 @@ const Navbar = () => {
     <div className='navbar bg-white '>
       <div className='navbar-start'>
         <div className='dropdown'>
-          <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-5 w-5'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='currentColor'>
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M4 6h16M4 12h8m-8 6h16'
-              />
-            </svg>
+          <div tabIndex={0} role='button' className='lg:hidden'>
+            <span className="text-4xl">
+              <FaBarsStaggered />
+            </span>
           </div>
           <ul
             tabIndex={0}
@@ -74,11 +66,12 @@ const Navbar = () => {
       </div>
       <div className='navbar-end'>
         {user ? (
-          <div className='dropdown dropdown-end flex'>
-            <label tabIndex={0} className='btn btn-circle avatar'>
-              <div
-                className='w-10 rounded-full tooltip'
-                data-tip={user?.displayName || "User Name not Available"}>
+          <div className='dropdown dropdown-end flex justify-center items-center'>
+            <div
+              className='tooltip tooltip-left size-14 mr-6'
+              data-tip={user?.displayName || "User Name not Available"}>
+              <span className=''>
+                {" "}
                 <img
                   src={
                     user?.photoURL || "https://i.ibb.co/9cZ7vD2/user-icon.jpg"
@@ -86,30 +79,27 @@ const Navbar = () => {
                   alt='Profile'
                   className='w-full h-full object-cover rounded-full'
                 />
-              </div>
-            </label>
+              </span>
+            </div>
+
             <div>
               <button
                 onClick={logout}
-                className='btn bg-red-500  rounded-lg text-white font-semibold py-4 px-6 mr-0'>
-                Logout
+                className=' bg-red-500 flex justify-center items-center rounded-lg text-white font-semibold py-4 px-6 mr-0'>
+                Logout{" "}
+                <span className='pl-2 pt-1 text-xl'>
+                  <MdLogout />
+                </span>
               </button>
             </div>
-            {/* <ul
-              tabIndex={0}
-              className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-auto lg:w-52'>
-              <li>
-                <button className='btn btn-sm  btn-ghost'>
-                  {user?.displayName || "User Name not Available"}
-                </button>
-              </li>
-              <li></li>
-            </ul> */}
           </div>
         ) : (
           <Link to='/login'>
-            <button className='btn bg-[#23BE0A] rounded-lg text-white font-semibold py-4 px-6 mr-0'>
+            <button className='bg-[#23BE0A] flex justify-center items-center rounded-lg text-white font-semibold py-4 px-6 mr-0'>
               Login
+              <span className='pl-2 pt-1 text-xl'>
+                <VscAccount />
+              </span>
             </button>
           </Link>
         )}

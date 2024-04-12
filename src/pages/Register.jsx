@@ -17,22 +17,18 @@ const Register = () => {
   } = useForm();
 
   const [showPassword, setShowPassword] = useState(false);
-  // const notifySuccess = (message) => {
-  //   toast.success(message);
-  // };
-  // const notifyError = (errorMessage) => {
-  //   toast.error(errorMessage);
-  // };
+
 
   // for navigation
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
     const { email, password, image, fullName } = data;
-    // console.log(password);
+   
 
     //Create User and update profile
     createUser(email, password).then(() => {
+      toast.success("Registration Successful")
       updateUserProfile(fullName, image)
         .then(() => {
           toast.success("Registration Successful");
@@ -41,7 +37,11 @@ const Register = () => {
         .catch(() => {
           toast.error("Registration Failed!");
         });
-    });
+    })
+      .catch((error) => {
+        console.error(error)
+      toast.error("Registration Not complete!");
+    })
   };
   return (
     <div>
