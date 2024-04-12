@@ -6,6 +6,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
+import loginPassword from "../../public/loginPassword.svg"
+
 
 const Login = () => {
   const { signInUser } = useAuth();
@@ -43,42 +45,6 @@ const Login = () => {
       <Helmet>
         <title>NS | Login</title>
       </Helmet>
-
-      {/* <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
-            <div className='space-y-1 text-sm'>
-              <label htmlFor='username' className='block text-gray-600'>
-                Enter Your Email
-              </label>
-              <input
-                type='email'
-                name='email'
-                placeholder='Enter your Email'
-                className='w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-default-600'
-                {...register("email", { required: true })}
-              />
-              {errors.email && (
-                <span className='text-red-500'>This field is required</span>
-              )}
-            </div>
-            <div className='space-y-1 text-sm'>
-              <label htmlFor='password' className='block text-gray-600'>
-                Password
-              </label>
-              <input
-                type='password'
-                name='password'
-                placeholder='Password'
-                className='w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-default-600'
-                {...register("password", { required: true })}
-              />
-              {errors.password && (
-                <span className='text-red-500'>This field is required</span>
-              )}
-            </div>
-            <button className='block w-full p-3 text-center rounded-sm text-white bg-blue-600'>
-              Log In
-            </button>
-          </form> */}
 
       <div className='w-full mx-auto lg:w-[500px] drop-shadow-2xl bg-white p-6'>
         <form onSubmit={handleSubmit(onSubmit)} className=' '>
@@ -129,44 +95,34 @@ const Login = () => {
                       stroke='#000000'></rect>
                   </g>
                 </svg>
+                
               </span>
             </div>
             <label htmlFor='password' className='block'>
               Password
             </label>
-            <div className='relative'>
+            <div className='relative flex items-center'>
               <input
                 name='password'
                 type={showPassword ? "text" : "password"}
                 placeholder='Enter Your Password'
-                className='p-3 block w-full pl-10 drop-shadow-lg outline-none'
+                className='p-3 block w-full pl-10 pr-10 drop-shadow-lg outline-none'
                 {...register("password", { required: true })}
               />
               <span
-                className='cursor-pointer absolute '
+                className='absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer'
                 onClick={() => setShowPassword(!showPassword)}>
-                {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>
               {errors.password && (
                 <span className='text-red-500'>This field is required</span>
               )}
-              <span className='absolute top-1/4 left-2'>
-                <svg
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  className='inline-block w-6'
-                  xmlns='http://www.w3.org/2000/svg'>
-                  <g strokeWidth='0'></g>
-                  <g
-                    id='SVGRepo_tracerCarrier'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'></g>
-                  <g id='SVGRepo_iconCarrier'>
-                    <path
-                      d='M20.9098 11.1203V6.73031C20.9098 5.91031 20.2898 4.98031 19.5198 4.67031L13.9498 2.39031C12.6998 1.88031 11.2898 1.88031 10.0398 2.39031L4.46984 4.67031C3.70984 4.98031 3.08984 5.91031 3.08984 6.73031V11.1203C3.08984 16.0103 6.63984 20.5903 11.4898 21.9303C11.8198 22.0203 12.1798 22.0203 12.5098 21.9303C17.3598 20.5903 20.9098 16.0103 20.9098 11.1203ZM12.7498 12.8703V15.5003C12.7498 15.9103 12.4098 16.2503 11.9998 16.2503C11.5898 16.2503 11.2498 15.9103 11.2498 15.5003V12.8703C10.2398 12.5503 9.49984 11.6103 9.49984 10.5003C9.49984 9.12031 10.6198 8.00031 11.9998 8.00031C13.3798 8.00031 14.4998 9.12031 14.4998 10.5003C14.4998 11.6203 13.7598 12.5503 12.7498 12.8703Z'
-                      fill='#000000'></path>
-                  </g>
-                </svg>
+              <span className='absolute top-1/2 transform -translate-y-1/2 left-0'>
+                <img
+                  src={loginPassword}
+                  alt=''
+                  className='w-5 h-5 fill-current'
+                />
               </span>
             </div>
           </div>

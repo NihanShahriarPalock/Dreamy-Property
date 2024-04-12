@@ -18,30 +18,50 @@ const Register = () => {
 
   const [showPassword, setShowPassword] = useState(false);
 
+  const [registerError, setRegisterError] = useState("");
 
   // for navigation
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
     const { email, password, image, fullName } = data;
-   
+    setRegisterError("");
+
+
+    if (password.length < 6) {
+      setRegisterError("Password less than 6 character");
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      setRegisterError("Password must contain at least one uppercase letter");
+      return false;
+    }
+
+    if (!/[a-z]/.test(password)) {
+      setRegisterError("Password must contain at least one lowercase letter");
+      return false;
+    }
 
     //Create User and update profile
-    createUser(email, password).then(() => {
-      toast.success("Registration Successful")
-      updateUserProfile(fullName, image)
-        .then(() => {
-          toast.success("Registration Successful");
-          navigate("/");
-        })
-        .catch(() => {
-          toast.error("Registration Failed!");
-        });
-    })
+    createUser(email, password)
+      .then(() => {
+        
+        updateUserProfile(fullName, image)
+          .then(() => {
+            
+            toast.success(`Welcome ${fullName}`);
+            navigate("/");
+          })
+          .catch((error) => {
+            console.error(error);
+            toast.error("Registration Failed!");
+          });
+      })
       .catch((error) => {
-        console.error(error)
-      toast.error("Registration Not complete!");
-    })
+        console.error(error);
+        setRegisterError(error.message);
+        toast.error("Registration Not complete!");
+      });
   };
   return (
     <div>
@@ -64,7 +84,7 @@ const Register = () => {
               name='name'
               placeholder='Enter Your Name'
               className='w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-default-600'
-              {...register("fullName", { required: true })}
+              {...register("fullName")}
             />
             {errors.fullName && (
               <span className='text-red-500'>This field is required</span>
@@ -109,11 +129,13 @@ const Register = () => {
               onClick={() => setShowPassword(!showPassword)}>
               {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
             </span>
+            {registerError && <h2 className='text-red-600'>{registerError}</h2>}
           </div>
           <button className='block w-full p-3 text-center rounded-sm text-white bg-blue-600 font-semibold '>
             Register
           </button>
         </form>
+
         <p>
           Already Registered{" "}
           <Link className='text-blue-500 underline' to='/login'>
