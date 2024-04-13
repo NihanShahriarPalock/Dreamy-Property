@@ -4,13 +4,15 @@ import Slider from "../components/body/Slider";
 
 
 
+
 const Home = () => {
     return (
         <div>
             <Helmet>
                 <title>NS | Home</title>
             </Helmet>
-         <Slider></Slider>
+            <Slider></Slider>
+          
          <AllCards></AllCards>
         </div>
     );
