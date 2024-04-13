@@ -32,8 +32,8 @@ function Slider() {
 
   return (
     <article className='relative w-full flex lg:h-[calc(100vh-100px)] flex-shrink-0 overflow-hidden rounded-2xl shadow-2xl mb-10'>
-      <div className='rounded-full bg-gray-600 text-white absolute top-5 right-5 text-sm px-2 text-center z-10'>
-        <span>{currentIndex}</span>/<span>{images.length}</span>
+      <div className='rounded-full bg-gray-600 text-white absolute top-5 right-5 text-sm px-2 text-center z-20 py-2'>
+        <span>Slide : {currentIndex}</span>/<span>{images.length}</span>
       </div>
 
       {images.map((image, index) => (
@@ -50,12 +50,33 @@ function Slider() {
             {captions[index]}
           </div>
 
-
           <div className='absolute z-10 top-1/4 left-3  w-1/3 font-bold bg-transparent  '>
             <p className='text-red-600 text-7xl leading-50 '>
               Welcome To NS Property
             </p>
-            <p>Find Your Dream Property</p>
+            <p className='text-white mt-4 italic text-3xl'>
+              Find Your Dream Property
+            </p>
+            <div className="mt-6">
+              <a
+                href=''
+                className='inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg text-white bg-green-500 rounded-md hover:bg-green-400 sm:w-auto sm:mb-0'
+                data-primary='green-400'
+                data-rounded='rounded-2xl'
+                data-primary-reset='{}'>
+                Get Started
+                <svg
+                  className='w-4 h-4 ml-1'
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 20 20'
+                  fill='currentColor'>
+                  <path
+                    fillRule='evenodd'
+                    d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
+                    clipRule='evenodd'></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       ))}
