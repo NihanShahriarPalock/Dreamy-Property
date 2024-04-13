@@ -69,7 +69,7 @@ const Register = () => {
         <title>NS | Register</title>
       </Helmet>
       <div className='w-full max-w-md mx-auto p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800'>
-        <h1 className='text-2xl font-bold text-center'>Register</h1>
+        <h1 className='text-2xl font-bold text-center'>Registration Form</h1>
         <form
           onSubmit={handleSubmit(onSubmit)}
           noValidate=''
@@ -117,18 +117,20 @@ const Register = () => {
             <label htmlFor='password' className='block text-gray-600'>
               Password
             </label>
-            <input
-              type={showPassword ? "text" : "password"}
-              name='password'
-              placeholder='Password'
-              className='w-full px-4 py-3 rounded-md  bg-gray-50 text-gray-800  relative'
-              {...register("password", { required: true })}
-            />
-            <span
-              className='cursor-pointer absolute '
-              onClick={() => setShowPassword(!showPassword)}>
-              {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
-            </span>
+            <div className="flex items-center justify-between">
+              <input
+                type={showPassword ? "text" : "password"}
+                name='password'
+                placeholder='Password'
+                className='w-full px-4 py-3 rounded-md  bg-gray-50 text-gray-800 '
+                {...register("password", { required: true })}
+              />
+              <span
+                className='cursor-pointer '
+                onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+              </span>
+            </div>
             {registerError && <h2 className='text-red-600'>{registerError}</h2>}
           </div>
           <button className='block w-full p-3 text-center rounded-sm text-white bg-blue-600 font-semibold '>
@@ -136,10 +138,10 @@ const Register = () => {
           </button>
         </form>
 
-        <p>
+        <p className="text-center">
           Already Registered{" "}
-          <Link className='text-blue-500 underline' to='/login'>
-            Login
+          <Link className='text-blue-500' to='/login'>
+            Click to Login
           </Link>{" "}
         </p>
       </div>
