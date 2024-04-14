@@ -1,5 +1,5 @@
 import useAuth from "../hook/useAuth";
-import { Navigate, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const PrivateRoutes = ({children}) => {
@@ -8,8 +8,12 @@ const PrivateRoutes = ({children}) => {
 
     if (loading) {
         return (
-          <div className="w-full h-screen flex justify-center items-center"> 
-            <span className=' loading loading-spinner loading-lg'></span>
+          <div className='w-full h-[calc(100vh-130px)] flex flex-col justify-center items-center'>
+            <div className='w-10 h-10 animate-[spin_2s_linear_infinite] rounded-full border-8 border-dotted border-sky-600'></div>
+            <div className="mt-4 text-red-500 italic font-semibold text-3xl">
+              {" "}
+              <Link to='/login'>Please Login To See Details</Link>
+            </div>
           </div>
         );
     }

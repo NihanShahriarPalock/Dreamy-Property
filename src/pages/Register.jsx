@@ -51,6 +51,7 @@ const Register = () => {
             
             toast.success(`Welcome ${fullName}`);
             navigate("/");
+            // window.location.reload();
           })
           .catch((error) => {
             console.error(error);

@@ -7,6 +7,10 @@ import Error from "../pages/Error";
 import Register from "../pages/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import UpdateProfile from "../pages/UpdateProfile";
+import AOS from "aos";
+import "aos/dist/aos.css"; 
+
+AOS.init();
 
 export const router = createBrowserRouter([
   {

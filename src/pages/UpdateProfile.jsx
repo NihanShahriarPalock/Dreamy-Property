@@ -28,10 +28,10 @@ const UpdateProfile = () => {
     try {
       updateUserProfile(displayName, image);
       setUpdateData(false);
-      toast.success("Profile updated successfully!");
+      toast.success("Profile updated successfully");
     } catch (error) {
       setUpdateData(false);
-      toast.error("Something went wrong");
+      toast.error("Something went wrong !");
     }
   };
 
@@ -43,6 +43,8 @@ const UpdateProfile = () => {
       <div className='flex flex-col justify-center items-center md:flex-row lg:flex-row md:gap-10 lg:gap-10 '>
         <div className='flex justify-center lg:justify-end items-center '>
           <img
+            data-aos='zoom-in'
+            data-aos-duration='1000'
             className='rounded-full  shadow-2xl size-64'
             src={image}
             alt=''
@@ -55,8 +57,21 @@ const UpdateProfile = () => {
 
           <form onSubmit={handleSubmit}>
             <div className='mb-4'>
+              <label htmlFor='displayEmail' className='block text-gray-700'>
+                 Email:
+              </label>
+              <input
+                type='text'
+                value={user?.email || "User Email not Found"}
+                
+                className='mt-1 block input-lg border border-gray-500 w-full rounded-md  shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50' disabled
+              />
+            </div>
+
+            {/* Name */}
+            <div className='mb-4'>
               <label htmlFor='displayName' className='block text-gray-700'>
-                Your Name:
+                Full Name:
               </label>
               <input
                 type='text'
@@ -67,7 +82,7 @@ const UpdateProfile = () => {
             </div>
             <div className='mb-4'>
               <label htmlFor='image' className='block text-gray-700'>
-                Upload Image URL:
+                Image URL:
               </label>
               <input
                 type='text'
