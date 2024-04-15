@@ -9,6 +9,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import UpdateProfile from "../pages/UpdateProfile";
 import AOS from "aos";
 import "aos/dist/aos.css"; 
+import SellProperty from "../pages/SellProperty";
 
 AOS.init();
 
@@ -26,9 +27,20 @@ export const router = createBrowserRouter([
       },
       {
         path: "/updateProfile",
-        element: <PrivateRoutes>
-          <UpdateProfile></UpdateProfile>
-        </PrivateRoutes>,
+        element: (
+          <PrivateRoutes>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/sellProperty",
+        element: (
+          // <PrivateRoutes>
+          //   <SellProperty></SellProperty>
+          // </PrivateRoutes>
+          <SellProperty></SellProperty>
+        ),
       },
       {
         path: "/:id",

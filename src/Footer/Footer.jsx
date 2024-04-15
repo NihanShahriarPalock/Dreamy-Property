@@ -4,56 +4,58 @@ import { FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className='mt-10'>
-      <footer className='w-full text-gray-700 bg-gray-100 '>
-        <div className='py-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  justify-center '>
-          <div className=' mb-3 md:mb-3 lg:mb-0 flex flex-col items-center justify-around '>
+      <footer className='w-full text-gray-700 bg-[#181818] '>
+        <div className='py-5 px-5 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 '>
+          <div className=' mb-3 lg:mb-0 flex flex-col justify-around border border-red-500'>
             <p className=' text-black font-semibold text-3xl'>NS Property</p>
             <p className=' text-gray-800 text-2xl font-medium'>
               Find Your Dream Property
             </p>
-            <p className='text-gray-600 text-xl'>Location: Sector-13, Road-09, Uttara Dhaka</p>
+            <p className='text-gray-600 text-xl'>
+              Location: Sector-13, Road-09, Uttara Dhaka
+            </p>
           </div>
 
-          <div className='w-full '>
-            <h2 className='mb-3 text-sm font-medium tracking-widest text-gray-900 uppercase title-font text-center'>
+          <div className='w-full pl-0 md:px-28  border border-red-500 '>
+            <h2 className='mb-3 text-sm font-medium tracking-widest text-white uppercase title-font  underline'>
               About
             </h2>
-            <nav className='mb-10 list-none flex flex-col items-center'>
+            <nav className='mb-10 list-none flex flex-col'>
               <li className='mt-3'>
-                <a className='text-gray-500 cursor-pointer hover:text-gray-900'>
+                <a className='text-[#c2c4c4] cursor-pointer  hover:text-white hover:underline'>
                   Company
                 </a>
               </li>
               <li className='mt-3'>
-                <a className='text-gray-500 cursor-pointer hover:text-gray-900'>
+                <a className='text-[#c2c4c4] cursor-pointer  hover:text-white hover:underline'>
                   Careers
                 </a>
               </li>
               <li className='mt-3'>
-                <a className='text-gray-500 cursor-pointer hover:text-gray-900'>
+                <a className='text-[#c2c4c4] cursor-pointer hover:text-white hover:underline'>
                   Blog
                 </a>
               </li>
             </nav>
           </div>
 
-          <div className='w-full '>
-            <h2 className='mb-3 text-sm font-medium tracking-widest text-gray-900 uppercase title-font text-center'>
+          <div className='w-full pl-0 md:px-28  border border-red-500'>
+            <h2 className='mb-3 text-sm font-medium tracking-widest text-white uppercase title-font  underline'>
               Platform
             </h2>
-            <nav className='mb-10 list-none flex flex-col items-center'>
+            <nav className='mb-10 list-none flex flex-col  '>
               <li className='mt-3'>
-                <a className='text-gray-500 cursor-pointer hover:text-gray-900'>
+                <a className='text-[#c2c4c4] cursor-pointer hover:text-white hover:underline'>
                   Terms &amp; Privacy
                 </a>
               </li>
               <li className='mt-3'>
-                <a className='text-gray-500 cursor-pointer hover:text-gray-900'>
+                <a className='text-[#c2c4c4] cursor-pointer hover:text-white hover:underline'>
                   Pricing
                 </a>
               </li>
               <li className='mt-3'>
-                <a className='text-gray-500 cursor-pointer hover:text-gray-900'>
+                <a className='text-[#c2c4c4] cursor-pointer hover:text-white hover:underline'>
                   FAQ
                 </a>
               </li>
@@ -63,7 +65,7 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className='bg-[#202020] '>
-          <div className='container p-3 mx-auto flex justify-evenly'>
+          <div className='container  px-20 flex justify-between'>
             <div className='text-sm text-white capitalize'>
               <p>
                 {" "}

@@ -11,7 +11,76 @@ const CardDetails = () => {
       <Helmet>
         <title>NS | Product - {id}</title>
       </Helmet>
-      <div className='flex flex-col lg:flex-row gap-3 lg:gap-12'>
+      {/* 1st  */}
+      {/* <div className=' bg-[#23BE0A0D] rounded-2xl items-center p-2 flex   justify-center'></div> */}
+
+      <div
+        className='border border-red-500 w-full h-[calc(100vh-200px)] bg-center opacity-90 bg-no-repeat bg-cover'
+        style={{ backgroundImage: `url(${card.image})` }}></div>
+
+      <div className='flex  justify-center h-screen mt-10'>
+        <ul className=' grid w-full grid-cols-3 gap-x-5 px-8'>
+          <li className=''>
+            <input
+              className='peer sr-only'
+              type='radio'
+              value='yes'
+              name='answer'
+              id='yes'
+            />
+            <label
+              className='flex justify-center cursor-pointer rounded-full border border-gray-300 bg-white py-2 px-4 hover:bg-gray-50 focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-indigo-500 '
+              htmlFor='yes'>
+              Description
+            </label>
+
+            <div className='absolute bg-white shadow-lg left-0 p-6 border mt-2 border-indigo-300 rounded-lg w-[98vw]  opacity-0 invisible peer-checked:opacity-100 peer-checked:visible '>
+              {card.description}
+            </div>
+          </li>
+
+          <li className=''>
+            <input
+              className='peer sr-only'
+              type='radio'
+              value='no'
+              name='answer'
+              id='no'
+            />
+            <label
+              className='flex justify-center cursor-pointer rounded-full border border-gray-300 bg-white py-2 px-4 hover:bg-gray-50 focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-indigo-500 '
+              htmlFor='no'>
+              About
+            </label>
+
+            <div className='absolute bg-white shadow-lg left-0 p-6 border mt-2 border-indigo-300 rounded-lg w-[98vw]  opacity-0 invisible peer-checked:opacity-100 peer-checked:visible '>
+              about
+            </div>
+          </li>
+
+          <li className=''>
+            <input
+              className='peer sr-only'
+              type='radio'
+              value='yesno'
+              name='answer'
+              id='yesno'
+            />
+            <label
+              className='flex justify-center cursor-pointer rounded-full border border-gray-300 bg-white py-2 px-4 hover:bg-gray-50 focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-indigo-500  '
+              htmlFor='yesno'>
+              Something
+            </label>
+
+            <div className='absolute bg-white shadow-lg left-0 p-6 border mt-2 border-indigo-300 rounded-lg w-[98vw] mx-auto  opacity-0 invisible peer-checked:opacity-100 peer-checked:visible'>
+              Lorem ipsum
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      {/* 2nd pass */}
+      {/* <div className='flex flex-col lg:flex-row gap-3 lg:gap-12'>
         <div className='w-full lg:w-1/2 bg-[#23BE0A0D] rounded-2xl items-center p-2 flex   justify-center'>
           <img className='w-full ' src={card.image} alt='' />
         </div>
@@ -42,8 +111,9 @@ const CardDetails = () => {
             <div></div>
           </div>
         </div>
-      </div>
+      </div> */}
 
+      {/* cancel  */}
       {/* <div className='py-5 mx-auto bg-gray-100 text-gray-800'>
         <div className='flex flex-col mx-auto rounded'>
           <img

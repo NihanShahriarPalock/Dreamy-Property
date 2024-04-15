@@ -9,7 +9,7 @@ const allLink = (
       to='/'
       className={({ isActive }) =>
         isActive
-          ? "text-lg mr-4 text-[#23BE0A] font-semibold rounded-lg border border-[#23BE0A] px-5 py-3"
+          ? "text-lg mr-4 text-white bg-blue-700 font-semibold rounded-lg border border-black px-5 py-3 "
           : "text-[#131313CC] text-lg mr-4 rounded-lg font-normal  px-5 py-3"
       }>
       Home
@@ -19,29 +19,28 @@ const allLink = (
       to='/updateProfile'
       className={({ isActive }) =>
         isActive
-          ? "text-lg mr-4 text-[#23BE0A] font-semibold  rounded-lg border border-[#23BE0A] px-5 py-3"
+          ? "text-lg mr-4 text-white bg-blue-700 font-semibold  rounded-lg border border-[#23BE0A] px-5 py-3"
           : "text-[#131313CC] text-lg mr-4 rounded-lg font-normal px-5 py-3"
       }>
       Update Profile
     </NavLink>
 
     <NavLink
-      to='/faq'
+      to='/sellProperty'
       className={({ isActive }) =>
         isActive
-          ? "text-lg mr-4 text-[#23BE0A] font-semibold  rounded-lg border border-[#23BE0A] px-5 py-3"
+          ? "text-lg mr-4 text-white bg-blue-700 font-semibold  rounded-lg border border-[#23BE0A] px-5 py-3"
           : "text-[#131313CC] text-lg mr-4 rounded-lg font-normal px-5 py-3"
       }>
-      FAQ
+      Sell Property
     </NavLink>
-   
   </>
 );
 
 const Navbar = () => {
   const {logout,user}=useAuth();
   return (
-    <div className='navbar bg-white '>
+    <div className='navbar bg-blue-400 '>
       <div className='navbar-start'>
         <div className='dropdown'>
           <div tabIndex={0} role='button' className='lg:hidden'>
@@ -51,7 +50,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52'>
+            className='menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-white rounded-box w-52'>
             {allLink}
           </ul>
         </div>

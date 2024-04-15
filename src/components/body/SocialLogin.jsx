@@ -31,9 +31,8 @@ const SocialLogin = () => {
         <p className='px-3 text-sm text-gray-600'>Login with social accounts</p>
         <div className='flex-1 h-px sm:w-16 bg-gray-300'></div>
       </div>
-      
-      <div className='flex justify-center space-x-4 my-4'>
 
+      <div className='flex flex-col gap-4 md:flex-row justify-center my-4'>
         <button
           onClick={() => handleSocialLogin(googleLogin)}
           aria-label='Login with Google'
@@ -52,10 +51,10 @@ const SocialLogin = () => {
           <p>Login with GitHub</p>
         </button>
       </div>
-      <p className='text-xs text-center sm:px-6 text-gray-600'>
-        Do not have an account?
-        <Link to='/register' className='underline ml-2 text-blue-800'>
-          Sign up
+      <p className='text-sm text-center sm:px-6 text-gray-600'>
+        Don&#x27;t have an account?
+        <Link to='/register' className='ml-2 text-blue-800 hover:underline'>
+          Click to Register
         </Link>
       </p>
     </div>

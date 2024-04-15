@@ -8,7 +8,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const { createUser, updateUserProfile } = useAuth();
+  const { createUser, updateUserProfile, setUser } = useAuth();
 
   const {
     register,
@@ -27,7 +27,6 @@ const Register = () => {
     const { email, password, image, fullName } = data;
     setRegisterError("");
 
-
     if (password.length < 6) {
       setRegisterError("Password less than 6 character");
       return;
@@ -45,10 +44,9 @@ const Register = () => {
     //Create User and update profile
     createUser(email, password)
       .then(() => {
-        
         updateUserProfile(fullName, image)
           .then(() => {
-            
+            setUser({ displayName: fullName, photoURL: image });
             toast.success(`Welcome ${fullName}`);
             navigate("/");
             // window.location.reload();
@@ -56,6 +54,7 @@ const Register = () => {
           .catch((error) => {
             console.error(error);
             toast.error("Registration Failed!");
+            setRegisterError(error.message);
           });
       })
       .catch((error) => {
@@ -118,7 +117,7 @@ const Register = () => {
             <label htmlFor='password' className='block text-gray-600'>
               Password
             </label>
-            <div className="flex items-center justify-between">
+            <div className='flex items-center justify-between'>
               <input
                 type={showPassword ? "text" : "password"}
                 name='password'
@@ -139,7 +138,7 @@ const Register = () => {
           </button>
         </form>
 
-        <p className="text-center">
+        <p className='text-center'>
           Already Registered{" "}
           <Link className='text-blue-500' to='/login'>
             Click to Login
