@@ -7,109 +7,61 @@ const SingleCard = ({ card }) => {
     estate_title,
     id,
     segment_name,
-    
     price,
     status,
-    
     location,
-    
+    bedroom,
+    area
   } = card;
   return (
-    <div>
-      <div className='flex flex-col p-3 border-2  border-[#13131326] space-y-6 overflow-hidden shadow-lg bg-white rounded-2xl   '>
-        <div className='mb-6 relative'>
-          <div className='absolute left-4 right-4 top-4'>
-            <button className='rounded-lg bg-[#eb2f2f] px-3 py-1 font-medium text-white text-lg'>
+    <>
+      <div className='relative mx-auto w-full'>
+        <div className='shadow-md p-4 rounded-lg bg-white'>
+          <div className='flex justify-center relative rounded-lg overflow-hidden h-52'>
+            <div className='absolute  flex justify-center bottom-0 mb-3'>
+              <div className='flex bg-white px-4 py-1 space-x-5 rounded-lg overflow-hidden shadow'>
+                <p className='flex items-center font-medium text-blue-500'>
+                  <svg
+                    className='w-5 h-5 fill-current mr-2'
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 512 512'>
+                    <path d='M480,226.15V80a48,48,0,0,0-48-48H80A48,48,0,0,0,32,80V226.15C13.74,231,0,246.89,0,266.67V472a8,8,0,0,0,8,8H24a8,8,0,0,0,8-8V416H480v56a8,8,0,0,0,8,8h16a8,8,0,0,0,8-8V266.67C512,246.89,498.26,231,480,226.15ZM64,192a32,32,0,0,1,32-32H208a32,32,0,0,1,32,32v32H64Zm384,32H272V192a32,32,0,0,1,32-32H416a32,32,0,0,1,32,32ZM80,64H432a16,16,0,0,1,16,16v56.9a63.27,63.27,0,0,0-32-8.9H304a63.9,63.9,0,0,0-48,21.71A63.9,63.9,0,0,0,208,128H96a63.27,63.27,0,0,0-32,8.9V80A16,16,0,0,1,80,64ZM32,384V266.67A10.69,10.69,0,0,1,42.67,256H469.33A10.69,10.69,0,0,1,480,266.67V384Z'></path>
+                  </svg>
+                  {bedroom}
+                </p>
+
+                <p className='flex items-center font-medium text-blue-500'>
+                       <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="h-5 w-5 mr-2" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M10.38 13.08A1 1 0 0 0 10 13H6a1 1 0 0 0 0 2h1.59l-5.3 5.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 16.41V18a1 1 0 0 0 2 0v-4a1 1 0 0 0-.08-.38a1 1 0 0 0-.54-.54ZM10 5a1 1 0 0 0-1 1v1.59l-5.29-5.3a1 1 0 0 0-1.42 1.42L7.59 9H6a1 1 0 0 0 0 2h4a1 1 0 0 0 .38-.08a1 1 0 0 0 .54-.54A1 1 0 0 0 11 10V6a1 1 0 0 0-1-1Zm3.62 5.92A1 1 0 0 0 14 11h4a1 1 0 0 0 0-2h-1.59l5.3-5.29a1 1 0 1 0-1.42-1.42L15 7.59V6a1 1 0 0 0-2 0v4a1 1 0 0 0 .08.38a1 1 0 0 0 .54.54ZM16.41 15H18a1 1 0 0 0 0-2h-4a1 1 0 0 0-.38.08a1 1 0 0 0-.54.54A1 1 0 0 0 13 14v4a1 1 0 0 0 2 0v-1.59l5.29 5.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z" /></svg>
+          
+                  {area}
+                </p>
+              </div>
+            </div>
+            <div className='absolute  flex justify-center top-[18px] transform -rotate-45 left-0 bg-red-600 text-white p-2 rounded-lg'>
               {status}
+            </div>
+
+            <div className='w-full'>
+              <img src={image} alt='' className='object-cover w-full h-52' />
+            </div>
+          </div>
+
+          <div className='py-5'>
+            <h3 className='text-xl font-semibold'>{estate_title}</h3>
+            <p className='text-gray-500'>{segment_name}</p>
+            <p className='text-lg font-semibold mt-3'>{price}</p>
+
+            <p className='mt-2 text-gray-600'>{location}</p>
+          </div>
+          <div>
+            
+            <button className=' hover:before:bg-red border-blue-500 relative h-[50px] w-full  border bg-white px-3 text-blue-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:h-full before:w-0 before:bg-blue-500 before:transition-all before:duration-1000 hover:text-white  hover:before:left-0 hover:before:w-full'>
+              <Link className="z-50 relative" to={`/${id}`}>View Details</Link>
             </button>
           </div>
-          <img
-            src={image}
-            alt=''
-            className='w-full h-[435px] object-cover   rounded-2xl bg-[#13131326]'
-          />
         </div>
-
-        <div>
-          <h2 className='font-bold text-2xl my-4 text-[#131313]'>
-            {estate_title}
-          </h2>
-        </div>
-        <div className="flex justify-between">
-          <p className='font-semibold text-xl text-[#131313CC]'> {segment_name}</p>
-          <p className='font-medium text-[#131313CC]'> {price}</p>
-        </div>
-
-        <div className='divide-y-2 divide-dashed divide-gray-500'>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-
-        <p className=''>{location}</p>
-
-        <Link to={`/${id}`}>
-          {" "}
-          <button className='btn font-semibold text-white bg-green-600  rounded-2xl'>
-            View Details
-          </button>
-        </Link>
       </div>
-
-      {/* <div className='mx-auto my-20 max-w-[350px] space-y-6 rounded-xl bg-white px-4 pb-8 pt-4 font-sans shadow-lg dark:bg-[#18181B]'>
-        <div className='relative flex h-48 w-full justify-center lg:h-[280px]'>
-          <img
-            width={300}
-            height={300}
-            className='h-full w-full rounded-lg bg-black/40'
-            src={image}
-            alt='card '
-          />
-        </div>
-        <div className='mx-auto w-[85%] space-y-2 text-center font-semibold'>
-          <h6 className='text-sm md:text-base lg:text-lg'>
-            Waterproof Sport HD Monitor for MacBook
-          </h6>
-          <p className='text-xs font-semibold text-gray-400 md:text-sm'>
-            Macbook Air
-          </p>
-        </div>
-        <div className='flex flex-wrap items-center justify-center gap-6 text-sm md:text-base'>
-          <button className='rounded-lg bg-[#49B2FF] px-4 py-2 font-sans font-semibold text-white duration-300 hover:scale-105 hover:bg-sky-600'>
-            Buy now
-          </button>
-          <button className='flex items-center '>
-            <svg
-              width={35}
-              viewBox='0 0 24 24'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'>
-              {" "}
-              <g strokeWidth='0'></g>{" "}
-              <g
-                id='navigateui'
-                strokeLinecap='round'
-                strokeLinejoin='round'></g>{" "}
-              <g id='navigateui'>
-                {" "}
-                <path
-                  fillRule='evenodd'
-                  clipRule='evenodd'
-                  d='M3.04047 2.29242C2.6497 2.15503 2.22155 2.36044 2.08416 2.7512C1.94678 3.14197 2.15218 3.57012 2.54295 3.7075L2.80416 3.79934C3.47177 4.03406 3.91052 4.18961 4.23336 4.34802C4.53659 4.4968 4.67026 4.61723 4.75832 4.74609C4.84858 4.87818 4.91828 5.0596 4.95761 5.42295C4.99877 5.80316 4.99979 6.29837 4.99979 7.03832L4.99979 9.64C4.99979 12.5816 5.06302 13.5523 5.92943 14.4662C6.79583 15.38 8.19028 15.38 10.9792 15.38H16.2821C17.8431 15.38 18.6236 15.38 19.1753 14.9304C19.727 14.4808 19.8846 13.7164 20.1997 12.1875L20.6995 9.76275C21.0466 8.02369 21.2202 7.15417 20.7762 6.57708C20.3323 6 18.8155 6 17.1305 6H6.49233C6.48564 5.72967 6.47295 5.48373 6.4489 5.26153C6.39517 4.76515 6.27875 4.31243 5.99677 3.89979C5.71259 3.48393 5.33474 3.21759 4.89411 3.00139C4.48203 2.79919 3.95839 2.61511 3.34187 2.39838L3.04047 2.29242ZM13 8.25C13.4142 8.25 13.75 8.58579 13.75 9V10.25H15C15.4142 10.25 15.75 10.5858 15.75 11C15.75 11.4142 15.4142 11.75 15 11.75H13.75V13C13.75 13.4142 13.4142 13.75 13 13.75C12.5858 13.75 12.25 13.4142 12.25 13V11.75H11C10.5858 11.75 10.25 11.4142 10.25 11C10.25 10.5858 10.5858 10.25 11 10.25H12.25V9C12.25 8.58579 12.5858 8.25 13 8.25Z'
-                  fill='#c5c5C7'></path>{" "}
-                <path
-                  d='M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z'
-                  fill='#c5c5C7'></path>{" "}
-                <path
-                  d='M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z'
-                  fill='#c5c5C7'></path>
-              </g>
-            </svg>
-            <span className='text-[#c7c7c5]'>Add to Cart</span>
-          </button>
-        </div>
-      </div> */}
-    </div>
+    </>
   );
 };
 SingleCard.propTypes = {

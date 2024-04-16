@@ -60,21 +60,26 @@ const Register = () => {
       .catch((error) => {
         console.error(error);
         setRegisterError(error.message);
-        toast.error("Registration Not complete!");
+        toast.error("Registration Incomplete!");
       });
   };
   return (
     <div>
       <Helmet>
-        <title>NS | Register</title>
+        <title>Dreamy | Register</title>
       </Helmet>
-      <div className='w-full max-w-md mx-auto p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800'>
-        <h1 className='text-2xl font-bold text-center'>Registration Form</h1>
+      <div className='mt-6 w-full mx-auto lg:w-[500px] drop-shadow-2xl bg-white p-6'>
+        <h1 className='backdrop-blur-sm text-4xl text-center pb-5'>
+          Register Form
+        </h1>
+        <p className='pb-10 text-center text-gray-400'>
+          Fill up all the information to register
+        </p>
         <form
           onSubmit={handleSubmit(onSubmit)}
           noValidate=''
           action=''
-          className='space-y-6'>
+          className='space-y-5'>
           <div className='space-y-1 text-sm'>
             <label htmlFor='username' className='block text-gray-600'>
               Full Name
@@ -83,36 +88,39 @@ const Register = () => {
               type='text'
               name='name'
               placeholder='Enter Your Name'
-              className='w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-default-600'
+              className='w-full px-4 py-3 rounded-md  bg-gray-50 text-gray-800 drop-shadow-lg outline-none'
               {...register("fullName")}
             />
             {errors.fullName && (
               <span className='text-red-500'>This field is required</span>
             )}
           </div>
-          <label htmlFor='email' className='block text-gray-600'>
-            Email
-          </label>
-          <input
-            type='email'
-            name='email'
-            placeholder='Enter your mail'
-            className='w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-default-600'
-            {...register("email", { required: true })}
-          />
-          {errors.email && (
-            <span className='text-red-500'>This field is required</span>
-          )}
-          <label htmlFor='Photo' className='block text-gray-600'>
-            Photo Url
-          </label>
-          <input
-            type='text'
-            placeholder='Photo Url'
-            className='w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-default-600'
-            {...register("image")}
-          />
-
+          <div className='space-y-1 text-sm'>
+            <label htmlFor='email' className='block text-gray-600'>
+              Email
+            </label>
+            <input
+              type='email'
+              name='email'
+              placeholder='Enter Your Mail'
+              className='w-full px-4 py-3 rounded-md  bg-gray-50 text-gray-800 drop-shadow-lg outline-none'
+              {...register("email", { required: true })}
+            />
+            {errors.email && (
+              <span className='text-red-500'>This field is required</span>
+            )}
+          </div>
+          <div className='space-y-1 text-sm'>
+            <label htmlFor='Photo' className='block text-gray-600 '>
+              Photo Url
+            </label>
+            <input
+              type='text'
+              placeholder='Photo Url'
+              className='w-full px-4 py-3 rounded-md bg-gray-50 text-gray-800 drop-shadow-lg outline-none'
+              {...register("image")}
+            />
+          </div>
           <div className='space-y-1 text-sm'>
             <label htmlFor='password' className='block text-gray-600'>
               Password
@@ -122,7 +130,7 @@ const Register = () => {
                 type={showPassword ? "text" : "password"}
                 name='password'
                 placeholder='Password'
-                className='w-full px-4 py-3 rounded-md  bg-gray-50 text-gray-800 '
+                className='w-full px-4 py-3 rounded-md bg-gray-50 text-gray-800 drop-shadow-lg outline-none'
                 {...register("password", { required: true })}
               />
               <span
@@ -133,14 +141,15 @@ const Register = () => {
             </div>
             {registerError && <h2 className='text-red-600'>{registerError}</h2>}
           </div>
-          <button className='block w-full p-3 text-center rounded-sm text-white bg-blue-600 font-semibold '>
-            Register
+
+          <button className='hover:before:bg-red border-blue-500 relative h-[50px] w-full  border bg-white px-3 text-blue-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:h-full before:w-0 before:bg-blue-500 before:transition-all before:duration-1000 hover:text-white  hover:before:left-0 hover:before:w-full'>
+            <span className='z-50 relative'>Register</span>
           </button>
         </form>
 
-        <p className='text-center'>
-          Already Registered{" "}
-          <Link className='text-blue-500' to='/login'>
+        <p className='text-center mt-4'>
+          Already Registered ?{" "}
+          <Link className='text-blue-500 hover:underline' to='/login'>
             Click to Login
           </Link>{" "}
         </p>

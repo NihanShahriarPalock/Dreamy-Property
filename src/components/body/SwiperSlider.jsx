@@ -25,8 +25,8 @@ const SwiperSlider = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className='mySwiper relative lg:h-[calc(100vh-100px)]'>
         <div className='absolute z-20  left-1/2 transform -translate-x-1/2 top-1/4 text-5xl text-red-700 font-bold'>
-          <p>Welcome To Dream Property</p>
-          <span  className="btn absolute bg-green-500  left-14">Explore Now</span>
+          <p>Welcome To Dreamy Property</p>
+          <span  className="btn absolute bg-blue-500  left-14">Explore Now</span>
           
         </div>
         <SwiperSlide>
@@ -38,13 +38,7 @@ const SwiperSlider = () => {
             </div>
           </div>
         </SwiperSlide>
-        {/* <SwiperSlide>
-          <div>
-            <div className="h-screen bg-center  bg-no-repeat bg-cover bg-[url('https://i.ibb.co/r0qTtVk/slider-2.jpg')]">
-              <p>hello</p>
-            </div>
-          </div>
-        </SwiperSlide> */}
+       
       </Swiper>
     </>
   );

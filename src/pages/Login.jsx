@@ -44,11 +44,11 @@ const Login = () => {
   return (
     <>
       <Helmet>
-        <title>NS | Login</title>
+        <title>Dreamy | Login</title>
       </Helmet>
 
-      <div className='w-full mx-auto lg:w-[500px] drop-shadow-2xl bg-white p-6'>
-        <form onSubmit={handleSubmit(onSubmit)} className=' '>
+      <div className='mt-6 w-full mx-auto lg:w-[500px] drop-shadow-2xl bg-white p-6'>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className='backdrop-blur-sm text-4xl text-center pb-5'>
             Login Form
           </h1>
@@ -56,10 +56,10 @@ const Login = () => {
             Sign in with your authorized email and password
           </p>
           <div className='space-y-5'>
-            <label htmlFor='email' className='block'>
+            {/* <label htmlFor='email' className='block'>
               Email
-            </label>
-            <div className='relative'>
+            </label> */}
+            <div className='relative mb-6 '>
               <input
                 name='email'
                 type='email'
@@ -74,9 +74,9 @@ const Login = () => {
                 <TbMailFilled />
               </span>
             </div>
-            <label htmlFor='password' className='block'>
+            {/* <label htmlFor='password' className='block'>
               Password
-            </label>
+            </label> */}
             <div className='relative flex items-center'>
               <input
                 name='password'
@@ -90,17 +90,18 @@ const Login = () => {
                 onClick={() => setShowPassword(!showPassword)}>
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>
-              {errors.password && (
-                <span className='text-red-500'>This field is required</span>
-              )}
+
               <span className='absolute top-1/2 transform -translate-y-1/2 left-0 text-3xl'>
                 <TbShieldLockFilled />
               </span>
             </div>
+            {errors.password && (
+              <p className=' text-red-500'>This field is required</p>
+            )}
           </div>
 
-          <button className='py-2 px-5 w-full text-white hover:text-blue-500 mb-4 mt-6 shadow-lg before:block before:-left-1 before:-top-1 before:bg-blue-500 before:absolute before:h-0 before:w-0 before:hover:w-[100%] before:hover:h-[100%]  before:duration-500 before:-z-40 after:block after:-right-1 after:-bottom-1 after:bg-blue-500 after:absolute after:h-0 after:w-0 after:hover:w-[100%] after:hover:h-[100%] after:duration-500 after:-z-40 bg-blue-500 hover:bg-white relative inline-block'>
-            Login
+          <button className='mt-6  hover:before:bg-red border-blue-500 relative h-[50px] w-full  border bg-white px-3 text-blue-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:h-full before:w-0 before:bg-blue-500 before:transition-all before:duration-1000 hover:text-white  hover:before:left-0 hover:before:w-full'>
+            <span className='z-50 relative'>Login</span>
           </button>
         </form>
 

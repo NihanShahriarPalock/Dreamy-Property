@@ -36,10 +36,10 @@ export const router = createBrowserRouter([
       {
         path: "/sellProperty",
         element: (
-          // <PrivateRoutes>
-          //   <SellProperty></SellProperty>
-          // </PrivateRoutes>
-          <SellProperty></SellProperty>
+          <PrivateRoutes>
+            <SellProperty></SellProperty>
+          </PrivateRoutes>
+        
         ),
       },
       {

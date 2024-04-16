@@ -20,14 +20,15 @@ const UpdateProfile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(updateData);
     setUpdateData(false);
     
     try {
       updateUserProfile(displayName, image);
       setUpdateData(true);
+      console.log(user);
       toast.success("Profile updated successfully");
-      window.location.reload();
-      
+
     } catch (error) {
       setUpdateData(false);
       toast.error("Something went wrong !");
@@ -37,7 +38,7 @@ const UpdateProfile = () => {
   return (
     <>
       <Helmet>
-        <title>NS | Update Profile</title>
+        <title>Dreamy | Update Profile</title>
       </Helmet>
       <div className='flex flex-col justify-center items-center md:flex-row lg:flex-row md:gap-10 lg:gap-10 '>
         <div className='flex justify-center lg:justify-end items-center '>
@@ -86,8 +87,8 @@ const UpdateProfile = () => {
             </div>
             <button
               type='submit'
-              className='w-full input-lg bg-indigo-500 text-white font-bold py-2 px-4 rounded hover:bg-indigo-700  '>
-              Update
+              className='hover:before:bg-red border-blue-500 relative h-[50px] w-full  border bg-white px-3 text-blue-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:h-full before:w-0 before:bg-blue-500 before:transition-all before:duration-1000 hover:text-white hover:shadow-blue-500 hover:before:left-0 hover:before:w-full'>
+              <span className='z-50 relative'>Update</span>
             </button>
           </form>
         </div>

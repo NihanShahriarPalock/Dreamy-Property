@@ -26,7 +26,7 @@ const SocialLogin = () => {
 
   return (
     <div>
-      <div className='flex items-center space-x-1'>
+      <div className='mt-4 flex items-center space-x-1'>
         <div className='flex-1 h-px sm:w-16 bg-gray-300'></div>
         <p className='px-3 text-sm text-gray-600'>Login with social accounts</p>
         <div className='flex-1 h-px sm:w-16 bg-gray-300'></div>
