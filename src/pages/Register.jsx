@@ -68,7 +68,9 @@ const Register = () => {
       <Helmet>
         <title>Dreamy | Register</title>
       </Helmet>
-      <div className='mt-6 w-full mx-auto lg:w-[500px] drop-shadow-2xl bg-white p-6'>
+      <div
+        data-aos='zoom-in'
+        className='mt-6 w-full mx-auto lg:w-[500px] drop-shadow-2xl bg-white p-6'>
         <h1 className='backdrop-blur-sm text-4xl text-center pb-5'>
           Register Form
         </h1>
@@ -142,7 +144,7 @@ const Register = () => {
             {registerError && <h2 className='text-red-600'>{registerError}</h2>}
           </div>
 
-          <button className='hover:before:bg-red border-blue-500 relative h-[50px] w-full  border bg-white px-3 text-blue-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:h-full before:w-0 before:bg-blue-500 before:transition-all before:duration-1000 hover:text-white  hover:before:left-0 hover:before:w-full'>
+          <button className='hover:before:bg-red border-blue-500 relative h-[50px] w-full  border bg-white px-3 text-blue-500  transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:h-full before:w-0 before:bg-blue-500 before:transition-all before:duration-1000 hover:text-white  hover:before:left-0 hover:before:w-full'>
             <span className='z-50 relative'>Register</span>
           </button>
         </form>

@@ -3,7 +3,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className='mt-10'>
+    <div className='mt-10 mb-2'>
       <footer className='w-full text-gray-700 bg-[#181818] '>
         <div className='py-5 px-5 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 '>
           <div className=' mb-3 lg:mb-0 flex flex-col justify-around '>
@@ -65,7 +65,7 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className='bg-[#202020] '>
-          <div className='container  px-20 flex justify-between'>
+          <div className='container px-5  lg:px-20 flex flex-col md:flex-row justify-between'>
             <div className='text-sm text-white capitalize'>
               <p>
                 {" "}
@@ -80,7 +80,7 @@ const Footer = () => {
                 Shahriar
               </p>
             </div>
-            <div className='flex flex-row items-center gap-6 text-2xl text-white cursor-pointer'>
+            <div className='flex flex-row items-center mt-2 md:mt-0 gap-6 text-2xl text-white cursor-pointer'>
               <FaFacebook />
               <FaInstagram />
               <FaTwitter />

@@ -44,7 +44,7 @@ const Navbar = () => {
       <div className='navbar-start'>
         <div className='dropdown'>
           <div tabIndex={0} role='button' className='lg:hidden'>
-            <span className="text-4xl">
+            <span className='text-4xl'>
               <FaBarsStaggered />
             </span>
           </div>
@@ -94,12 +94,17 @@ const Navbar = () => {
           </div>
         ) : (
           <Link to='/login'>
-            <button className='bg-[#23BE0A] flex justify-center items-center rounded-lg text-white font-semibold py-4 px-6 mr-0'>
-              Login
-              <span className='pl-2 pt-1 text-xl'>
-                <VscAccount />
-              </span>
+            <button className=' hover:before:bg-red rounded-lg  relative h-[50px] w-full border-2 bg-green-400 border-green-500  px-5 py-3 text-black transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:h-full before:w-0 before:bg-green-600 before:transition-all before:duration-500 hover:text-white  hover:before:left-0 hover:before:w-full'>
+              <div className='flex'>
+                {" "}
+                <span className='z-50 relative'>Login</span>
+                <span className='z-50 relative pl-2 pt-1 text-xl'>
+                  <VscAccount />
+                </span>
+              </div>
             </button>
+
+            {/* </button> */}
           </Link>
         )}
       </div>

@@ -57,7 +57,7 @@
     "facilities": ["Luxury Villa", "Beachfront Cabanas", "Jetty", "Helipad"]
   },
   {
-    "image": "https://i.ibb.co/ZGPN9TM/id-05.jpg",
+    "image": "https://i.ibb.co/nkXyqMV/image-5.jpg",
     "estate_title": "Luxurious Mediterranean Villa",
     "id": 5,
     "segment_name": "Villas",
@@ -76,14 +76,15 @@
   },
 
   {
-    "image": "https://i.ibb.co/FXVtbBs/id-06.jpg",
-    "estate_title": "Grand Mansion Estate",
+    "image": "https://i.ibb.co/PjRQXvX/4501909-house-modern-lights-hdr-clouds-grass-building-palm-trees-reflection-swimming-pool.jpg",
+    "estate_title": "Grand Mansion ",
     "id": 6,
     "segment_name": "Mansions",
     "description": "Charming, updated co-op flat nestled in the desirable Bay Terrace neighborhood. This home boasts hardwood floors, newly renovated bathrooms, a modern eat-in kitchen, sleek front-loading washer/dryer, spacious dining room, ample living area, three sizable bedrooms, and ample storage space. The master bedroom features both a standard closet and a custom closet wall unit. Large windows throughout provide abundant natural light from various angles",
     "price": "$15,000,000",
     "status": "For Sale",
     "area": "15,000 sq ft",
+    "bedroom": "6",
     "location": "Beverly Hills, California",
     "facilities": ["Ballroom", "Home Theater", "Indoor Pool", "Guest House"]
   }

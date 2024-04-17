@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { SlLocationPin } from "react-icons/sl";
 
 const SingleCard = ({ card }) => {
   const {
@@ -11,7 +12,7 @@ const SingleCard = ({ card }) => {
     status,
     location,
     bedroom,
-    area
+    area,
   } = card;
   return (
     <>
@@ -31,8 +32,18 @@ const SingleCard = ({ card }) => {
                 </p>
 
                 <p className='flex items-center font-medium text-blue-500'>
-                       <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="h-5 w-5 mr-2" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M10.38 13.08A1 1 0 0 0 10 13H6a1 1 0 0 0 0 2h1.59l-5.3 5.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 16.41V18a1 1 0 0 0 2 0v-4a1 1 0 0 0-.08-.38a1 1 0 0 0-.54-.54ZM10 5a1 1 0 0 0-1 1v1.59l-5.29-5.3a1 1 0 0 0-1.42 1.42L7.59 9H6a1 1 0 0 0 0 2h4a1 1 0 0 0 .38-.08a1 1 0 0 0 .54-.54A1 1 0 0 0 11 10V6a1 1 0 0 0-1-1Zm3.62 5.92A1 1 0 0 0 14 11h4a1 1 0 0 0 0-2h-1.59l5.3-5.29a1 1 0 1 0-1.42-1.42L15 7.59V6a1 1 0 0 0-2 0v4a1 1 0 0 0 .08.38a1 1 0 0 0 .54.54ZM16.41 15H18a1 1 0 0 0 0-2h-4a1 1 0 0 0-.38.08a1 1 0 0 0-.54.54A1 1 0 0 0 13 14v4a1 1 0 0 0 2 0v-1.59l5.29 5.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z" /></svg>
-          
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    aria-hidden='true'
+                    className='h-5 w-5 mr-2'
+                    preserveAspectRatio='xMidYMid meet'
+                    viewBox='0 0 24 24'>
+                    <path
+                      fill='currentColor'
+                      d='M10.38 13.08A1 1 0 0 0 10 13H6a1 1 0 0 0 0 2h1.59l-5.3 5.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 16.41V18a1 1 0 0 0 2 0v-4a1 1 0 0 0-.08-.38a1 1 0 0 0-.54-.54ZM10 5a1 1 0 0 0-1 1v1.59l-5.29-5.3a1 1 0 0 0-1.42 1.42L7.59 9H6a1 1 0 0 0 0 2h4a1 1 0 0 0 .38-.08a1 1 0 0 0 .54-.54A1 1 0 0 0 11 10V6a1 1 0 0 0-1-1Zm3.62 5.92A1 1 0 0 0 14 11h4a1 1 0 0 0 0-2h-1.59l5.3-5.29a1 1 0 1 0-1.42-1.42L15 7.59V6a1 1 0 0 0-2 0v4a1 1 0 0 0 .08.38a1 1 0 0 0 .54.54ZM16.41 15H18a1 1 0 0 0 0-2h-4a1 1 0 0 0-.38.08a1 1 0 0 0-.54.54A1 1 0 0 0 13 14v4a1 1 0 0 0 2 0v-1.59l5.29 5.3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42Z'
+                    />
+                  </svg>
+
                   {area}
                 </p>
               </div>
@@ -46,17 +57,24 @@ const SingleCard = ({ card }) => {
             </div>
           </div>
 
-          <div className='py-5'>
+          <div className='space-y-3'>
             <h3 className='text-xl font-semibold'>{estate_title}</h3>
-            <p className='text-gray-500'>{segment_name}</p>
-            <p className='text-lg font-semibold mt-3'>{price}</p>
-
-            <p className='mt-2 text-gray-600'>{location}</p>
+            <div className='flex justify-between'>
+              <p className='text-gray-600'>{segment_name}</p>
+              <p className='text-lg text-blue-500  font-semibold '>{price}</p>
+            </div>
+            <p className='flex  items-center '>
+              <span className='text-blue-500 mr-2'>
+                <SlLocationPin />
+              </span>{" "}
+              <span className=' text-gray-600'>{location}</span>
+            </p>
           </div>
           <div>
-            
-            <button className=' hover:before:bg-red border-blue-500 relative h-[50px] w-full  border bg-white px-3 text-blue-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:h-full before:w-0 before:bg-blue-500 before:transition-all before:duration-1000 hover:text-white  hover:before:left-0 hover:before:w-full'>
-              <Link className="z-50 relative" to={`/${id}`}>View Details</Link>
+            <button className='mt-4 hover:before:bg-red border-blue-500 relative h-[50px] w-full  border bg-white px-3 text-blue-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:h-full before:w-0 before:bg-blue-500 before:transition-all before:duration-1000 hover:text-white  hover:before:left-0 hover:before:w-full'>
+              <Link className='z-50 relative' to={`/${id}`}>
+                View Details
+              </Link>
             </button>
           </div>
         </div>

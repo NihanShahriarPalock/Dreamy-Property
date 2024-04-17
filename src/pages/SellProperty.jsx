@@ -1,6 +1,8 @@
 import { Helmet } from "react-helmet-async";
+import useAuth from "../hook/useAuth";
 
 const SellProperty = () => {
+  const { user } = useAuth();
   return (
     <>
       <Helmet>
@@ -10,8 +12,8 @@ const SellProperty = () => {
       <div className='w-full lg:w-3/5 mx-auto mt-2 lg:mt-10'>
         <div>
           <div className='w-full rounded shadow overflow-hidden text-white'>
-            <div className='p-2 md:p-4 h-full bg-gray-800 col-span-2'>
-              <form>
+            <div className='p-2 md:p-4 h-full bg-gray-800  col-span-2'>
+              <form data-aos='flip-right' data-aos-duration='1500'>
                 <div className='flex flex-col md:flex-row justify-around items-start md:items-center pt-8 p-4'>
                   <h2 className='text-2xl md:text-3xl font-semibold'>
                     Fill up the information
@@ -47,6 +49,7 @@ const SellProperty = () => {
                       placeholder='Enter Your Name'
                       name='name'
                       type='text'
+                      value={user?.displayName || "Enter Your Name"}
                     />
                   </div>
 
@@ -60,6 +63,7 @@ const SellProperty = () => {
                       placeholder='Enter Your Email'
                       name='email'
                       type='email'
+                      value={user?.email || "Enter Your Email"}
                     />
                   </div>
                   {/* phone number input */}
@@ -89,7 +93,7 @@ const SellProperty = () => {
                         name='framework'
                       />
 
-                      <div className=' flex items-center justify-between px-2 py-1 border-2 rounded-lg cursor-pointer text-sm border-gray-200 group peer-checked:border-blue-500'>
+                      <div className=' flex items-center justify-between px-[8px] py-[1px] border-2 rounded-lg cursor-pointer text-sm border-gray-200 group peer-checked:border-blue-500'>
                         <h2 className='font-medium text-white'>Sale</h2>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
@@ -114,7 +118,7 @@ const SellProperty = () => {
                         name='framework'
                       />
 
-                      <div className=' flex items-center justify-between p-1 px-2 border-2 rounded-lg cursor-pointer text-sm border-gray-200 group peer-checked:border-blue-500'>
+                      <div className=' flex items-center justify-between px-[8px] py-[1px] border-2 rounded-lg cursor-pointer text-sm border-gray-200 group peer-checked:border-blue-500'>
                         <h2 className='font-medium text-white'>Rent</h2>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'

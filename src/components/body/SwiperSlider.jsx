@@ -24,21 +24,48 @@ const SwiperSlider = () => {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className='mySwiper relative lg:h-[calc(100vh-100px)]'>
-        <div className='absolute z-20  left-1/2 transform -translate-x-1/2 top-1/4 text-5xl text-red-700 font-bold'>
-          <p>Welcome To Dreamy Property</p>
-          <span  className="btn absolute bg-blue-500  left-14">Explore Now</span>
-          
+        <div className='absolute z-20 lg:left-1/2 transform lg:-translate-x-1/2 top-5 md:top-14 lg:top-1/4 flex flex-col items-center'>
+          <p
+            data-aos='fade-up-right'
+            className='text-black text-center font-bold text-3xl md:text-5xl'>
+            Welcome To Dreamy Property
+          </p>
+          <p
+            data-aos='fade-up-right'
+            data-aos-delay='300'
+            className='mt-4 text-center text-gray-600 font-semibold text-3xl'>
+            Your journey to Home Ownership, guided by expertise, trust, and
+            personalized service
+          </p>
+          <p
+            data-aos='fade-up-right'
+            data-aos-delay='700'
+            className=' bg-blue-500 mt-4 text-3xl p-3 rounded-lg cursor-pointer'>
+            Explore Now
+          </p>
         </div>
+
         <SwiperSlide>
           <div>
-            <div className="relative border border-red-500 h-screen bg-center opacity-90  bg-no-repeat bg-cover bg-[url('https://i.ibb.co/vhrPQSg/slider-2.webp')]">
-              <p className='absolute left-10  lg:left-[500px] lg:bottom-40 text-yellow-400 text-3xl'>
-                Hello hi bye
-              </p>
+            <div className="relative  h-screen bg-center opacity-80  bg-no-repeat bg-cover bg-[url('https://i.ibb.co/Ns73bQP/id-01.jpg')]">
+              <p className='absolute left-10  lg:left-[500px] lg:bottom-40 text-yellow-400 text-3xl'></p>
             </div>
           </div>
         </SwiperSlide>
-       
+        <SwiperSlide>
+          <div>
+            <div className="relative  h-screen bg-center opacity-80  bg-no-repeat bg-cover bg-[url('https://i.ibb.co/d4YKF84/id-02.jpg')]">
+              <p className='absolute left-10  lg:left-[500px] lg:bottom-40 text-yellow-400 text-3xl'></p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            <div className="relative  h-screen bg-center opacity-80  bg-no-repeat bg-cover bg-[url('https://i.ibb.co/PjRQXvX/4501909-house-modern-lights-hdr-clouds-grass-building-palm-trees-reflection-swimming-pool.jpg')]">
+              <p className='absolute left-10  lg:left-[500px] lg:bottom-40 text-yellow-400 text-3xl'></p>
+            </div>
+          </div>
+        </SwiperSlide>
       </Swiper>
     </>
   );

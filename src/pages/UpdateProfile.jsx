@@ -33,6 +33,7 @@ const UpdateProfile = () => {
       setUpdateData(false);
       toast.error("Something went wrong !");
     }
+    // window.location.reload()
   };
 
   return (
