@@ -55,7 +55,7 @@ const Login = () => {
             <div className='size-36'>
               <img
                 className='w-full'
-                src='../../public/Dreamy_Property.png'
+                src='https://i.ibb.co/SQd0HcX/Dreamy-Property.png'
                 alt=''
               />
             </div>

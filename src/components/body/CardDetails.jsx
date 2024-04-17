@@ -13,7 +13,8 @@ const CardDetails = () => {
         <title>Dreamy | Product - {id}</title>
       </Helmet>
 
-      <div
+      <div data-aos="zoom-in"
+        data-aos-duration="1000"
         className='mt-10 w-full h-[calc(100vh-200px)] bg-center opacity-90 rounded-xl bg-no-repeat bg-cover'
         style={{ backgroundImage: `url(${card.image})` }}></div>
 

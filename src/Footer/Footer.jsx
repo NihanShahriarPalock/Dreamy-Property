@@ -6,14 +6,9 @@ const Footer = () => {
     <div className='mt-10 mb-2'>
       <footer className='w-full text-gray-700 bg-[#181818] '>
         <div className='py-5 px-5 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 '>
-          <div className=' mb-3 lg:mb-0 flex flex-col justify-around '>
-            <p className=' text-white font-semibold text-3xl'>Dreamy Property</p>
-            <p className=' text-gray-300 text-2xl font-medium'>
-              Find Your Dream Property
-            </p>
-            <p className='text-gray-300 text-xl'>
-              Location: Sector-13, Road-09, Uttara Dhaka
-            </p>
+          
+          <div className="size-52">
+            <img className="w-full" src='https://i.ibb.co/SQd0HcX/Dreamy-Property.png' alt='' />
           </div>
 
           <div className='w-full pl-0 md:px-28 '>

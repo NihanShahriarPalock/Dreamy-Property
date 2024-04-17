@@ -15,7 +15,7 @@ const SwiperSlider = () => {
         spaceBetween={30}
         loop={true}
         autoplay={{
-          delay: 2500,
+          delay: 2000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -23,7 +23,7 @@ const SwiperSlider = () => {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className='mySwiper relative lg:h-[calc(100vh-100px)]'>
+        className='mySwiper mt-5 relative lg:h-[calc(100vh-100px)]'>
         <div className='absolute z-20 lg:left-1/2 transform lg:-translate-x-1/2 top-5 md:top-14 lg:top-1/4 flex flex-col items-center'>
           <p
             data-aos='fade-up-right'
@@ -40,7 +40,7 @@ const SwiperSlider = () => {
           <p
             data-aos='fade-up-right'
             data-aos-delay='700'
-            className=' bg-blue-500 mt-4 text-3xl p-3 rounded-lg cursor-pointer'>
+            className='text-white hover:text-black bg-slate-400 hover:bg-white mt-4 text-3xl p-3 rounded-lg cursor-pointer border-2 '>
             Explore Now
           </p>
         </div>
