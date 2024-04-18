@@ -53,7 +53,7 @@ const SocialLogin = () => {
       </div>
       <p className='text-sm text-center sm:px-6 text-gray-600'>
         Don&#x27;t have an account?
-        <Link to='/register' className='ml-2 text-blue-800 hover:underline'>
+        <Link to='/register' className='ml-2 text-blue-800 hover:underline underline-offset-4'>
           Click to Register
         </Link>
       </p>

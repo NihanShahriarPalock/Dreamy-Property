@@ -55,7 +55,9 @@ const Navbar = () => {
           </ul>
         </div>
         <button>
-          <NavLink to='/' className='text-xl md:text-2xl lg:text-3xl font-bold text-[#131313] '>
+          <NavLink
+            to='/'
+            className='text-xl md:text-2xl lg:text-3xl font-bold text-[#131313] '>
             Dreamy Property
           </NavLink>
         </button>
@@ -82,13 +84,17 @@ const Navbar = () => {
             </div>
 
             <div>
+             
               <button
                 onClick={logout}
-                className=' bg-red-500 flex justify-center items-center rounded-lg text-white font-semibold py-4 px-6 mr-0'>
-                Logout{" "}
-                <span className='pl-2 pt-1 text-xl'>
-                  <MdLogout />
-                </span>
+                className=' hover:before:bg-red rounded-lg  relative h-[50px] w-full border-2 bg-red-400 border-red-500  px-5 py-3 text-black transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:h-full before:w-0 before:bg-red-600 before:transition-all before:duration-500 hover:text-white  hover:before:left-0 hover:before:w-full'>
+                <div className='flex'>
+                  {" "}
+                  <span className='z-50 relative'>Logout</span>
+                  <span className='z-50 relative pl-2 pt-1 text-xl'>
+                    <MdLogout />
+                  </span>
+                </div>
               </button>
             </div>
           </div>
