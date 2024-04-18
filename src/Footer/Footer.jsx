@@ -5,13 +5,16 @@ const Footer = () => {
   return (
     <div className='mt-10 mb-2'>
       <footer className='w-full text-gray-700 bg-[#181818] '>
-        <div className='py-5 px-5 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 '>
-          
-          <div className="size-52">
-            <img className="w-full" src='https://i.ibb.co/SQd0HcX/Dreamy-Property.png' alt='' />
+        <div className='py-5 px-5 lg:px-20 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-10 '>
+          <div className=' '>
+            <img
+              className='size-40 w-96 pl-0 md:pl-56 lg:pl-0 '
+              src='https://i.ibb.co/SQd0HcX/Dreamy-Property.png'
+              alt=''
+            />
           </div>
 
-          <div className='w-full pl-0 md:px-28 '>
+          <div className='w-full pl-40 md:pl-72 lg:pl-0 '>
             <h2 className='mb-3 text-sm font-medium tracking-widest text-white uppercase title-font  underline'>
               About
             </h2>
@@ -34,7 +37,7 @@ const Footer = () => {
             </nav>
           </div>
 
-          <div className='w-full pl-0 md:px-28  '>
+          <div className='w-full pl-40 md:pl-72 lg:pl-0  '>
             <h2 className='mb-3 text-sm font-medium tracking-widest text-white uppercase title-font  underline'>
               Platform
             </h2>

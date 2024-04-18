@@ -13,8 +13,9 @@ const CardDetails = () => {
         <title>Dreamy | Product - {id}</title>
       </Helmet>
 
-      <div data-aos="zoom-in"
-        data-aos-duration="1000"
+      <div
+        data-aos='zoom-in'
+        data-aos-duration='1000'
         className='mt-10 w-full h-[calc(100vh-200px)] bg-center opacity-90 rounded-xl bg-no-repeat bg-cover'
         style={{ backgroundImage: `url(${card.image})` }}></div>
 
@@ -29,7 +30,7 @@ const CardDetails = () => {
               id='yes'
             />
             <label
-              className='flex justify-center cursor-pointer rounded-full border border-gray-300 bg-white py-2 px-4 hover:bg-gray-50 focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-blue-500 '
+              className='flex justify-center cursor-pointer rounded-full  bg-white py-2 px-4 hover:bg-blue-300 hover:text-white focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-blue-500 peer-checked:bg-blue-500 peer-checked:text-white text-xl'
               htmlFor='yes'>
               Description
             </label>
@@ -48,7 +49,7 @@ const CardDetails = () => {
               id='no'
             />
             <label
-              className='flex justify-center cursor-pointer rounded-full border border-gray-300 bg-white py-2 px-4 hover:bg-gray-50 focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-blue-500 '
+              className='flex justify-center cursor-pointer rounded-full  bg-white py-2 px-4 hover:bg-blue-300 hover:text-white focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-blue-500 peer-checked:bg-blue-500 peer-checked:text-white text-xl'
               htmlFor='no'>
               Details
             </label>
@@ -117,7 +118,7 @@ const CardDetails = () => {
               id='yesno'
             />
             <label
-              className='flex justify-center cursor-pointer rounded-full border border-gray-300 bg-white py-2 px-4 hover:bg-gray-50 focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-blue-500'
+              className='flex justify-center cursor-pointer rounded-full  bg-white py-2 px-4 hover:bg-blue-300 hover:text-white focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-blue-500 peer-checked:bg-blue-500 peer-checked:text-white text-xl'
               htmlFor='yesno'>
               Facility
             </label>

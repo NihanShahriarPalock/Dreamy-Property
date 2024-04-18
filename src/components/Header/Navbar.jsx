@@ -9,8 +9,8 @@ const allLink = (
       to='/'
       className={({ isActive }) =>
         isActive
-          ? "text-lg mr-4 text-white bg-blue-700 font-semibold rounded-lg border border-black px-5 py-3 "
-          : "text-[#131313CC] text-lg mr-4 rounded-lg font-normal  px-5 py-3"
+          ? "text-lg mr-4 text-white underline underline-offset-8  font-semibold    px-5 py-3"
+          : "text-[#131313CC] text-lg mr-4 hover:underline hover:underline-offset-8    rounded-lg font-normal px-5 py-3"
       }>
       Home
     </NavLink>
@@ -19,8 +19,8 @@ const allLink = (
       to='/updateProfile'
       className={({ isActive }) =>
         isActive
-          ? "text-lg mr-4 text-white bg-blue-700 font-semibold  rounded-lg border border-[#23BE0A] px-5 py-3"
-          : "text-[#131313CC] text-lg mr-4 rounded-lg font-normal px-5 py-3"
+          ? "text-lg mr-4 text-white underline underline-offset-8 font-semibold    px-5 py-3"
+          : "text-[#131313CC] text-lg mr-4 hover:underline hover:underline-offset-8   rounded-lg font-normal px-5 py-3"
       }>
       Update Profile
     </NavLink>
@@ -29,8 +29,8 @@ const allLink = (
       to='/sellProperty'
       className={({ isActive }) =>
         isActive
-          ? "text-lg mr-4 text-white bg-blue-700 font-semibold  rounded-lg border border-[#23BE0A] px-5 py-3"
-          : "text-[#131313CC] text-lg mr-4 rounded-lg font-normal px-5 py-3"
+          ? "text-lg mr-4 text-white underline underline-offset-8  font-semibold    px-5 py-3"
+          : "text-[#131313CC] text-lg mr-4 hover:underline hover:underline-offset-8   rounded-lg font-normal px-5 py-3"
       }>
       Sell Property
     </NavLink>
@@ -55,7 +55,7 @@ const Navbar = () => {
           </ul>
         </div>
         <button>
-          <NavLink to='/' className='text-3xl font-bold text-[#131313] '>
+          <NavLink to='/' className='text-xl md:text-2xl lg:text-3xl font-bold text-[#131313] '>
             Dreamy Property
           </NavLink>
         </button>
